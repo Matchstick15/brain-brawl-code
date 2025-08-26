@@ -7,26 +7,35 @@
   <body>
     <h1>signup</h1>
   </body>
-  <h2>Enter a username</h2>
   <center>
     <form method="POST" action="/signup">
-      <input class="box" type="text" placeholder="Username" />
-      <h2>Enter a password</h2>
-      <input class="box" type="text" placeholder="Password" />
-      <h2>Enter your School</h2>
-      <input class="box" type="text" placeholder="School" />
-      <label for="year-level"><h2>Year level</h2></label>
+      <label>Enter a username</label><br />
+      <input class="box" type="text" placeholder="Username" /><br />
+
+      <label>Enter a password</label><br />
+      <input class="box" type="text" placeholder="Password" /><br />
+
+      <label>Enter your first and last name</label><br />
+      <input class="box" type="text" placeholder="firstname" />
+      <input class="box" type="text" placeholder="surname" /><br />
+
+      <label>Enter your School</label><br />
+      <input class="box" type="text" placeholder="School" /><br />
+
+      <label for="year-level"><label>Year level</label></label
+      ><br />
       <select class="box" id="year-level" name="year-level">
+        <br />
         <option value="">Select year level</option>
         <option value="7">Year 7</option>
         <option value="8">Year 8</option>
         <option value="9">Year 9</option>
         <option value="10">Year 10</option>
         <option value="11">Year 11</option>
-        <option value="12">Year 12</option>
-      </select>
+        <option value="12">Year 12</option></select
+      ><br />
 
-      <h2>Select your subjects</h2>
+      <label>Select your subjects</label><br />
       <select id="subject-select" class="box">
         <option value="math">Math</option>
         <option value="science">Science</option>
@@ -34,9 +43,9 @@
         <option value="english">English</option>
         <option value="history">History</option>
       </select>
-      <button type="button" onclick="addSubject()">Add</button>
+      <button type="button" onclick="addSubject()">Add</button><br />
 
-      <h2>Your selected subjects</h2>
+      <label>Your selected subjects</label><br />
       <ul
         id="selected-subjects"
         class="box"
@@ -64,5 +73,6 @@
         list.appendChild(li);
       }
     </script>
+    <input class="box" type="button" value="Submit" /><br />
   </center>
 </html>
