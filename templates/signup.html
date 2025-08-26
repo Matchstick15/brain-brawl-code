@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Brain Brawl</title>
+    <link rel="stylesheet" href="/static/main.css" />
+  </head>
+  <body>
+    <h1>signup</h1>
+  </body>
+  <h2>Enter a username</h2>
+  <center>
+    <form method="POST" action="/signup">
+      <input class="box" type="text" placeholder="Username" />
+      <h2>Enter a password</h2>
+      <input class="box" type="text" placeholder="Password" />
+      <h2>Enter your School</h2>
+      <input class="box" type="text" placeholder="School" />
+      <label for="year-level"><h2>Year level</h2></label>
+      <select class="box" id="year-level" name="year-level">
+        <option value="">Select year level</option>
+        <option value="7">Year 7</option>
+        <option value="8">Year 8</option>
+        <option value="9">Year 9</option>
+        <option value="10">Year 10</option>
+        <option value="11">Year 11</option>
+        <option value="12">Year 12</option>
+      </select>
+
+      <h2>Select your subjects</h2>
+      <select id="subject-select" class="box">
+        <option value="math">Math</option>
+        <option value="science">Science</option>
+        <option value="art">Art</option>
+        <option value="english">English</option>
+        <option value="history">History</option>
+      </select>
+      <button type="button" onclick="addSubject()">Add</button>
+
+      <h2>Your selected subjects</h2>
+      <ul
+        id="selected-subjects"
+        class="box"
+        style="height: 100px; overflow-y: auto"
+      ></ul>
+    </form>
+
+    <script>
+      function addSubject() {
+        const select = document.getElementById("subject-select");
+        const value = select.value;
+        const text = select.options[select.selectedIndex].text;
+        const list = document.getElementById("selected-subjects");
+
+        // Prevent duplicates
+        if ([...list.children].some((li) => li.dataset.value === value)) return;
+
+        const li = document.createElement("li");
+        li.textContent = text;
+        li.dataset.value = value;
+        li.style.cursor = "pointer";
+        li.onclick = function () {
+          list.removeChild(li);
+        };
+        list.appendChild(li);
+      }
+    </script>
+  </center>
+</html>
