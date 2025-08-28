@@ -5,7 +5,24 @@
     <link rel="stylesheet" href="/static/main.css" />
   </head>
   <body>
-    <h1>Brain Brawl</h1>
+    <input
+      type="button"
+      value="Sign up"
+      onclick="window.location.href='/signup.html'"
+    />
+    <input
+      type="button"
+      value="Log in"
+      onclick="window.location.href='/login.html'"
+    />
+    <h1>
+      Brain
+      <img
+        src="{{ url_for('static', filename='brain.png') }}"
+        alt="Brain"
+        style="height: 50px; vertical-align: middle"
+      />Brawl
+    </h1>
     <p>
       Welcome! to the one and only competitiive study application which allows
       you to <strong>battle</strong> your friends, aswell as
@@ -17,11 +34,5 @@
       enviroment to push and motivate their studys while also being a way for
       students to devlope a deeper understanding of their subjects.
     </p>
-    <input
-      type="button"
-      value="Sign up"
-      onclick="window.location.href='/signup.html'"
-    />
-    <input type="button" value="Log in" />
   </body>
 </html>
