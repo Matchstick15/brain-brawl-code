@@ -11,4 +11,8 @@ def homepage():
 def signuppage():
     return render_template("signup.html")
 
+@app.route("/login.html")
+def loginpage():
+    return render_template("login.html")
+
 app.run(debug=True, port=5000)
