@@ -1,8 +1,13 @@
---CREATE TABLE Users (
---    StudentID INTEGER PRIMARY KEY AUTOINCREMENT,
---    Forename TEXT NOT NULL,
---    Surname  TEXT  NOT NULL,
---    Subjects TEXT NOT NULL
---);
-
---INSERT into users (Forename, Surname, Subjects) VALUES ('cody', 'sheedy', 'math');
+-- INSERT INTO Users ('Forename', 'Surname', 'Subjects') values ('test','test','test');
+-- INSERT INTO Users ('Forename', 'Surname', 'Subjects') values ('zssdfsdf','test','test');
+SELECT * from users;
+-- CREATE TABLE Users (
+--     StudentID INTEGER PRIMARY KEY AUTOINCREMENT,
+--     UserName TEXT NOT NULL,
+--     Password  TEXT  NOT NULL,
+--     School  TEXT  NOT NULL,
+--     YearLevel  TEXT  NOT NULL,
+--     FirstName  TEXT  NOT NULL,
+--     LastName  TEXT  NOT NULL,
+--     Subjects ARRAY NOT NULL
+-- )

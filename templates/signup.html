@@ -5,24 +5,25 @@
     <link rel="stylesheet" href="/static/main.css" />
   </head>
   <body>
+    {% if user %} {{user}} {% else %} no user {% endif %}
     <input type="button" value="Home page" onclick="window.location.href='/'" />
     <h1>Signup</h1>
   </body>
   <center>
-    <form method="POST" action="/signup">
+    <form method="POST" action="/signup.html">
       <label><strong>Enter a username</strong> </label><br />
-      <input class="box" type="text" placeholder="Username" /><br />
+      <input name="UserName" id="UserName" class="box" type="text" placeholder="Username" /><br />
 
       <label><strong>Enter a password</strong> </label><br />
-      <input class="box" type="text" placeholder="Password" /><br />
+      <input name="Password" id="Password" class="box" type="text" placeholder="Password" /><br />
 
       <label><strong>Enter your School</strong> </label><br />
-      <input class="box" type="text" placeholder="School" /><br />
+      <input name="School" id="School" class="box" type="text" placeholder="School" /><br />
 
       <label for="year-level"
         ><label><strong>Year level</strong> </label></label
       ><br />
-      <select class="box" id="year-level" name="year-level">
+      <select name="YearLevel" id="YearLevel" class="box" id="year-level" name="year-level">
         <br />
         <option value="">Select year level</option>
         <option value="7">Year 7</option>
@@ -34,11 +35,11 @@
       ><br />
 
       <label><strong>Enter your first and last name</strong> </label><br />
-      <input class="box" type="text" placeholder="firstname" />
-      <input class="box" type="text" placeholder="surname" /><br />
+      <input name="FirstName" id="FirstName" class="box" type="text" placeholder="firstname" />
+      <input name="LastName" id="LastName" class="box" type="text" placeholder="surname" /><br />
 
       <label><strong> Select your subjects</strong> </label><br />
-      <select id="subject-select" class="box">
+      <select id="Subjects" name='Subjects'class="box">
         <option value="math">Math</option>
         <option value="science">Science</option>
         <option value="art">Art</option>
@@ -49,32 +50,32 @@
 
       <label><strong>Your selected subjects</strong> </label><br />
       <ul
-        id="selected-subjects"
+        id="Subjects"
         class="box"
         style="height: 100px; overflow-y: auto"
       ></ul>
+      
+      <script>
+        function addSubject() {
+          const select = document.getElementById("Subjects");
+          const value = select.value;
+          const text = select.options[select.selectedIndex].text;
+          const list = document.getElementById("Subjects");
+          
+          // Prevent duplicates
+          if ([...list.children].some((li) => li.dataset.value === value)) return;
+          
+          const li = document.createElement("li");
+          li.textContent = text;
+          li.dataset.value = value;
+          li.style.cursor = "pointer";
+          li.onclick = function () {
+            list.removeChild(li);
+          };
+          list.appendChild(li);
+        }
+        </script>
+        <button type="Submit" class="btn">Submit</button>
     </form>
-
-    <script>
-      function addSubject() {
-        const select = document.getElementById("subject-select");
-        const value = select.value;
-        const text = select.options[select.selectedIndex].text;
-        const list = document.getElementById("selected-subjects");
-
-        // Prevent duplicates
-        if ([...list.children].some((li) => li.dataset.value === value)) return;
-
-        const li = document.createElement("li");
-        li.textContent = text;
-        li.dataset.value = value;
-        li.style.cursor = "pointer";
-        li.onclick = function () {
-          list.removeChild(li);
-        };
-        list.appendChild(li);
-      }
-    </script>
-    <input class="box" type="button" value="Submit" /><br />
   </center>
 </html>
