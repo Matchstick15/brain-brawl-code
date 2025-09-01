@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="/static/main.css" />
+  </head>
+  <body>
+    <h1>
+      Brain
+      <img
+        src="{{ url_for('static', filename='brain.png') }}"
+        alt="Brain"
+        style="height: 50px; vertical-align: middle"
+      />Brawl
+    </h1>
+    <form method="POST" action="/profile">
+      <div class="sidebar">
+        <input
+          type="button"
+          value="Logout"
+          onclick="window.location.href='/'"
+        />
+        <br />
+        <input
+          type="button"
+          value="home"
+          onclick="window.location.href='/home.html'"
+        />
+
+        <br />
+        <input
+          type="button"
+          value="profile"
+          onclick="window.location.href='/profile.html'"
+        />
+
+        <br />
+        <input
+          type="button"
+          value="quizes"
+          onclick="window.location.href='/quizes.html'"
+        />
+      </div>
+    </form>
+    <h1>Profile</h1>
+  </body>
+</html>

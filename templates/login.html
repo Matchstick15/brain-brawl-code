@@ -6,7 +6,7 @@
   </head>
   <body>
     <input type="button" value="Home page" onclick="window.location.href='/'" />
-    <h1>Signup</h1>
+    <h1>login</h1>
   </body>
   <center>
     <form method="POST" action="/login">
@@ -16,65 +16,7 @@
       <label><strong>Enter a password</strong> </label><br />
       <input class="box" type="text" placeholder="Password" /><br />
 
-      <label><strong>Enter your School</strong> </label><br />
-      <input class="box" type="text" placeholder="School" /><br />
-
-      <label for="year-level"
-        ><label><strong>Year level</strong> </label></label
-      ><br />
-      <select class="box" id="year-level" name="year-level">
-        <br />
-        <option value="">Select year level</option>
-        <option value="7">Year 7</option>
-        <option value="8">Year 8</option>
-        <option value="9">Year 9</option>
-        <option value="10">Year 10</option>
-        <option value="11">Year 11</option>
-        <option value="12">Year 12</option></select
-      ><br />
-
-      <label><strong>Enter your first and last name</strong> </label><br />
-      <input class="box" type="text" placeholder="firstname" />
-      <input class="box" type="text" placeholder="surname" /><br />
-
-      <label><strong> Select your subjects</strong> </label><br />
-      <select id="subject-select" class="box">
-        <option value="math">Math</option>
-        <option value="science">Science</option>
-        <option value="art">Art</option>
-        <option value="english">English</option>
-        <option value="history">History</option>
-      </select>
-      <button type="button" onclick="addSubject()">Add</button><br />
-
-      <label><strong>Your selected subjects</strong> </label><br />
-      <ul
-        id="selected-subjects"
-        class="box"
-        style="height: 100px; overflow-y: auto"
-      ></ul>
+      <button type="Submit" class="btn">Submit</button>
     </form>
-
-    <script>
-      function addSubject() {
-        const select = document.getElementById("subject-select");
-        const value = select.value;
-        const text = select.options[select.selectedIndex].text;
-        const list = document.getElementById("selected-subjects");
-
-        // Prevent duplicates
-        if ([...list.children].some((li) => li.dataset.value === value)) return;
-
-        const li = document.createElement("li");
-        li.textContent = text;
-        li.dataset.value = value;
-        li.style.cursor = "pointer";
-        li.onclick = function () {
-          list.removeChild(li);
-        };
-        list.appendChild(li);
-      }
-    </script>
-    <input class="box" type="button" value="Submit" /><br />
   </center>
 </html>

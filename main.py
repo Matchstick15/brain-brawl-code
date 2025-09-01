@@ -6,7 +6,7 @@ app.secret_key = "Brain_Brawl"
 # current_user = ""
 
 @app.route("/")
-def homepage():
+def mainpage():
     return render_template("main.html")
 
 
@@ -51,5 +51,17 @@ def signuppage():
 @app.route("/login.html")
 def loginpage():
     return render_template("login.html")
+
+@app.route("/home.html")
+def homepage():
+    return render_template("home.html")
+
+@app.route("/profile.html")
+def profilepage():
+    return render_template("profile.html")
+
+@app.route("/quizes.html")
+def quizpage():
+    return render_template("quizes.html")
 
 app.run(debug=True, port=5000)
