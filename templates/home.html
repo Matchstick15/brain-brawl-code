@@ -15,24 +15,17 @@
     </h1>
     <form method="POST" action="/home">
       <div class="sidebar">
-        <button
+<input
           type="button"
+          value="Logout"
           onclick="window.location.href='/'"
-          class="sidebar-icon"
-        >
-          <img
-            src="{{ url_for('static', filename='exit.png') }}"
-            alt="Logout"
-            style="height: 30px"
-          />
-        </button>
+        />
         <br />
-        <input
+<input
           type="button"
           value="home"
           onclick="window.location.href='/home.html'"
         />
-
         <br />
         <input
           type="button"
