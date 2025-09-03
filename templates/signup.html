@@ -39,42 +39,41 @@
       <input name="LastName" id="LastName" class="box" type="text" placeholder="surname" /><br />
 
       <label><strong> Select your subjects</strong> </label><br />
-      <select id="Subjects" name='Subjects'class="box">
-        <option value="math">Math</option>
-        <option value="science">Science</option>
-        <option value="art">Art</option>
-        <option value="english">English</option>
-        <option value="history">History</option>
-      </select>
-      <button type="button" onclick="addSubject()">Add</button><br />
+      <select id="Subjects" name='Subjects' class="box">
+  <option value="math">Math</option>
+  <option value="science">Science</option>
+  <option value="art">Art</option>
+  <option value="english">English</option>
+  <option value="history">History</option>
+</select>
+<button type="button" onclick="addSubject()">Add</button><br />
 
-      <label><strong>Your selected subjects</strong> </label><br />
-      <ul
-        id="Subjects"
-        class="box"
-        style="height: 100px; overflow-y: auto"
-      ></ul>
-      
-      <script>
-        function addSubject() {
-          const select = document.getElementById("Subjects");
-          const value = select.value;
-          const text = select.options[select.selectedIndex].text;
-          const list = document.getElementById("Subjects");
-          
-          // Prevent duplicates
-          if ([...list.children].some((li) => li.dataset.value === value)) return;
-          
-          const li = document.createElement("li");
-          li.textContent = text;
-          li.dataset.value = value;
-          li.style.cursor = "pointer";
-          li.onclick = function () {
-            list.removeChild(li);
-          };
-          list.appendChild(li);
-        }
-        </script>
+<label><strong>Your selected subjects</strong> </label><br />
+<ul
+  id="SelectedSubjects"
+  class="box"
+  style="height: 100px; overflow-y: auto"
+></ul>
+
+<script>
+  function addSubject() {
+    const select = document.getElementById("Subjects");
+    const value = select.value;
+    const text = select.options[select.selectedIndex].text;
+    const list = document.getElementById("SelectedSubjects");
+    
+    if ([...list.children].some((li) => li.dataset.value === value)) return;
+    
+    const li = document.createElement("li");
+    li.textContent = text;
+    li.dataset.value = value;
+    li.style.cursor = "pointer";
+    li.onclick = function () {
+      list.removeChild(li);
+    };
+    list.appendChild(li);
+  }
+</script>
         <button type="Submit" class="btn">Submit</button>
     </form>
   </center>
