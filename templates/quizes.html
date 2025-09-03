@@ -13,6 +13,117 @@
         style="height: 50px; vertical-align: middle"
       />Brawl
     </h1>
+    <h1>Questions:</h1>
+<form method="POST" action="/quizes">
+<div class="question">
+  <label>1. Define functional testing and explain why it is important in software development.</label>
+  <label><input type="radio" name="q1" value="A" />A. Testing the software’s appearance <!-- Correct --></label>
+  <label><input type="radio" name="q1" value="B" />B. Testing the software’s functionality against requirements</label>
+  <label><input type="radio" name="q1" value="C" />C. Testing only the user interface</label>
+  <label><input type="radio" name="q1" value="D" />D. Testing hardware compatibility</label>
+</div>
+
+<div class="question">
+  <label>2. Differentiate between live data and simulated data. Give one example of when each would be used.</label>
+  <label><input type="radio" name="q2" value="A" />A. Live data is made up, simulated data is real</label>
+  <label><input type="radio" name="q2" value="B" />B. Live data is real user data; simulated data is artificially created</label>
+  <label><input type="radio" name="q2" value="C" />C. Both are always used together <!-- Correct --></label>
+  <label><input type="radio" name="q2" value="D" />D. Simulated data is always better</label>
+</div>
+
+<div class="question">
+  <label>3. What is the purpose of beta testing, and how does it reduce risks before release?</label>
+  <label><input type="radio" name="q3" value="A" />A. To test the software only by developers</label>
+  <label><input type="radio" name="q3" value="B" />B. To test the software with real users before release</label>
+  <label><input type="radio" name="q3" value="C" />C. To test hardware components</label>
+  <label><input type="radio" name="q3" value="D" />D. To finalize documentation <!-- Correct --></label>
+</div>
+
+<div class="question">
+  <label>4. Describe the role of acceptance testing in the software development cycle.</label>
+  <label><input type="radio" name="q4" value="A" />A. To check if the software meets user requirements</label>
+  <label><input type="radio" name="q4" value="B" />B. To test network speed</label>
+  <label><input type="radio" name="q4" value="C" />C. To test only the login page</label>
+  <label><input type="radio" name="q4" value="D" />D. To design the user interface <!-- Correct --></label>
+</div>
+
+<div class="question">
+  <label>5. Compare functional testing and volume testing. How do their focuses differ?</label>
+  <label><input type="radio" name="q5" value="A" />A. Functional testing checks features; volume testing checks performance with large data</label>
+  <label><input type="radio" name="q5" value="B" />B. Both test only speed <!-- Correct --></label>
+  <label><input type="radio" name="q5" value="C" />C. Volume testing checks security</label>
+  <label><input type="radio" name="q5" value="D" />D. Functional testing is not important</label>
+</div>
+
+<div class="question">
+  <label>6. Explain why proper documentation is important when passing parameters between subprograms.</label>
+  <label><input type="radio" name="q6" value="A" />A. It helps programmers understand how to use subprograms correctly <!-- Correct --></label>
+  <label><input type="radio" name="q6" value="B" />B. It slows down development</label>
+  <label><input type="radio" name="q6" value="C" />C. It is only needed for hardware</label>
+  <label><input type="radio" name="q6" value="D" />D. It makes code harder to read</label>
+</div>
+
+<div class="question">
+  <label>7. Draw a data flow diagram for a website with a login and signup feature, and explain the main flows of data.</label>
+  <label><input type="radio" name="q7" value="A" />A. Data flows from user to server for login/signup, server responds with success/failure <!-- Correct --></label>
+  <label><input type="radio" name="q7" value="B" />B. Data flows only from server to user</label>
+  <label><input type="radio" name="q7" value="C" />C. Data flows only for signup</label>
+  <label><input type="radio" name="q7" value="D" />D. No data flows involved</label>
+</div>
+
+<div class="question">
+  <label>8. What is a structure chart, and how does it help software engineers organise a program’s design?</label>
+  <label><input type="radio" name="q8" value="A" />A. It shows the hierarchical structure of modules and their relationships</label>
+  <label><input type="radio" name="q8" value="B" />B. It shows only the user interface</label>
+  <label><input type="radio" name="q8" value="C" />C. It is used for hardware design <!-- Correct --></label>
+  <label><input type="radio" name="q8" value="D" />D. It is a type of test</label>
+</div>
+
+<div class="question">
+  <label>9. Discuss two potential limitations of using simulated data during system testing.</label>
+  <label><input type="radio" name="q9" value="A" />A. Simulated data may not reveal real-world issues; may not cover all scenarios</label>
+  <label><input type="radio" name="q9" value="B" />B. Simulated data is always better than live data <!-- Correct --></label>
+  <label><input type="radio" name="q9" value="C" />C. Simulated data is never used</label>
+  <label><input type="radio" name="q9" value="D" />D. Simulated data is only for documentation</label>
+</div>
+
+<div class="question">
+  <label>10. Explain the difference between system flowcharts and IPO charts. Give one situation where each would be most useful.</label>
+  <label><input type="radio" name="q10" value="A" />A. System flowcharts show processes and data flow; IPO charts show input, process, output</label>
+  <label><input type="radio" name="q10" value="B" />B. Both are used for hardware only</label>
+  <label><input type="radio" name="q10" value="C" />C. IPO charts show only output <!-- Correct --></label>
+  <label><input type="radio" name="q10" value="D" />D. System flowcharts are not useful</label>
+</div>
+  
+<button type="button" onclick="gradeQuiz()" style="margin: 30px auto; display: block;">Submit</button>
+      <div id="score" style="text-align:center; color:white; font-size:1.5em; margin-top:20px;"></div>
+    </form>
+    <script>
+      function gradeQuiz() {
+        const answers = {
+          q1: "A",
+          q2: "C",
+          q3: "D",
+          q4: "D",
+          q5: "B",
+          q6: "A",
+          q7: "A",
+          q8: "C",
+          q9: "B",
+          q10: "C"
+        };
+        let score = 0;
+        for (let i = 1; i <= 10; i++) {
+          const selected = document.querySelector('input[name="q'+i+'"]:checked');
+          if (selected && selected.value === answers['q'+i]) {
+            score++;
+          }
+        }
+        document.getElementById('score').innerText = `Your score: ${score} / 10`;
+      }
+    </script>
+  </body>
+</html>
     <form method="POST" action="/quizes">
       <div class="sidebar">
         <input
@@ -42,6 +153,4 @@
         />
       </div>
     </form>
-    <h1>quizes</h1>
-  </body>
-</html>
+

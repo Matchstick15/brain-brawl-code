@@ -22,9 +22,7 @@ def create_user(username,password,school,year_level,fistname,lastname,subjects):
     con.close()
     return data
 
-@app.route("/test", methods=["POST"])
-def test():
-    print("Test")
+
 
 
 @app.route("/signup.html", methods = ['POST','GET'])
@@ -41,6 +39,7 @@ def signuppage():
             request.form['FirstName'],
             request.form['LastName'],
             request.form['Subjects'],
+            
         )
         # current_user = username
         return render_template('/signup.html', is_done=True, user = username)
@@ -48,11 +47,11 @@ def signuppage():
         print("Displaying")
         return render_template("signup.html", user = None)
 
-@app.route("/login.html")
-def loginpage():
+@app.route('/login.html', methods=['GET', 'POST'])
+def login():
     return render_template("login.html")
 
-@app.route("/home.html")
+@app.route('/home.html')
 def homepage():
     return render_template("home.html")
 
